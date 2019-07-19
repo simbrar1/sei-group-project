@@ -24,6 +24,9 @@ app.use('/api', router)
 // make sure the error handler catches any errors
 app.use(errorHandler)
 
+
+app.get('/*', (req,res) => res.sendFile(`${__dirname}/dist/index.html`))
+
 app.listen(port, () => console.log(`App is listening on port ${port}`))
 
 module.exports = app
